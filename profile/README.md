@@ -2,7 +2,9 @@
 
 # Live Code
 
-[https://mango-helguind.csclub.cloud/](https://mango-helguind.csclub.cloud/)
+Frontend: [https://mango-helguind.csclub.cloud/](https://mango-helguind.csclub.cloud/)
+
+Backend: [https://mango-api-helguind.csclub.cloud/](https://mango-api-helguind.csclub.cloud/)
 
 # Creating the DB and Populating
 
