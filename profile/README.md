@@ -1,83 +1,29 @@
-# MangoMen
+# WatRank
 
-# Live Code
+## Live Code
+Frontend: [https://watrank.com](https://watrank.com)
 
-Frontend: [https://mango-helguind.csclub.cloud/](https://mango-helguind.csclub.cloud/)
+Backend: [https://watrank-api-helguind.csclub.cloud](https://watrank-api-helguind.csclub.cloud)
 
-Backend: [https://mango-api-helguind.csclub.cloud/](https://mango-api-helguind.csclub.cloud/)
+## Setup Database
+1. Clone [https://github.com/TheMangoMen/rankings-db](https://github.com/TheMangoMen/rankings-db)
+2. Create `.env` and `.pgpass` files
+3. Run `docker compose up -d` - this will create a container running PostgreSQL
+4. Run `./setup.sh`
+    - `setup.sh` will run various scripts to drop any tables currently in the database, create all tables, constraints, triggers, etc. and loads the sample data in CSV form into the newly created tables.
 
-# Creating the DB and Populating
+## Running Backend
+1. Clone [https://github.com/themangomen/backend](https://github.com/themangomen/backend)
+2. Create `.env` file
+3. Run `go run cmd/app/main.go`
 
-Our dataset was extracted as a csv file. We have an endpoint set up on our backend server to create the database and populate it using the csv file.
+## Running Frontend
+1. Clone [https://github.com/themangomen/frontend](https://github.com/themangomen/frontend)
+2. Run `cd watrank && npm i`
+3. Run `npm run dev`
 
-```python
-@app.get("/hevy/create")
-async def create_hevy_db():
-    cur.execute(f"""
-        CREATE TABLE IF NOT EXISTS {HEVY_TABLE} (
-            title VARCHAR(255),
-            start_time TIMESTAMP,
-            end_time TIMESTAMP,
-            description TEXT,
-            exercise_title VARCHAR(255),
-            superset_id INT,
-            exercise_notes TEXT,
-            set_index INT,
-            set_type VARCHAR(50),
-            weight_lbs DECIMAL,
-            reps INT,
-            distance_km DECIMAL,
-            duration_seconds INT,
-            rpe INT
-        );
-
-        COPY {HEVY_TABLE} FROM '{HEVY_DATA_PATH}' WITH CSV HEADER;
-    """)
-```
-
-# Fetching Data
-
-```python
-@app.get("/hevy/titles")
-async def get_hevy_titles():
-    cur.execute(f"SELECT DISTINCT title FROM {HEVY_TABLE};")
-    records = cur.fetchall()
-    return [i[0] for i in records]
-
-@app.get("/hevy/workouts")
-async def get_hevy_workouts():
-    cur.execute(f"SELECT * FROM {HEVY_TABLE} LIMIT {MAX_ROWS};")
-    records = cur.fetchall()
-    return records
-
-@app.get("/hevy/workouts/{title}")
-async def get_hevy_workouts_by_title(title):
-    cur.execute(f"SELECT * FROM {HEVY_TABLE} WHERE title='{title}' LIMIT {MAX_ROWS};")
-    records = cur.fetchall()
-    return records
-```
-
-# Setup
-
-## Install and Start Postgres
-
-```bash
-brew install postgres
-brew services start postgresql
-```
-
-## Create a Database
-
-```bash
-createdb milestone0
-psql -d milestone0
-```
-
-## Run the Backend
-
-In the `backend` repo, run
-
-```bash
-pip install -r requirements.txt
-fastapi dev main.py
-```
+## Features Supported
+- Passwordless Authentication
+- Retrieve all Jobs
+- Watch and Unwatch Jobs
+- Importing Jobs
