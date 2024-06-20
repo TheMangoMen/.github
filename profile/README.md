@@ -23,7 +23,7 @@ Backend: [https://watrank-api-helguind.csclub.cloud](https://watrank-api-helguin
 3. Run `npm run dev`
 
 ## Features Supported
+- View Jobs with Status
+- Bulk Import, Watch and Unwatch Jobs
 - Passwordless Authentication
-- Retrieve all Jobs
-- Watch and Unwatch Jobs
-- Importing Jobs
+- Admin Logging
