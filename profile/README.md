@@ -27,3 +27,11 @@ Backend: [https://watrank-api-helguind.csclub.cloud](https://watrank-api-helguin
 - Bulk Import, Watch and Unwatch Jobs
 - Passwordless Authentication
 - Admin Logging
+
+## Testing SQL Statements
+The `test-sample.sql` and respective `.out` files are found in [https://github.com/TheMangoMen/rankings-db/tree/main/sql](https://github.com/TheMangoMen/rankings-db/tree/main/sql) under multiple files:
+- `test-sample-select-small.sql`
+- `test-sample-select-large.sql`
+- `test-sample-insert-update-delete.sql`
+
+`sql/sample/jobs_short.csv` was used for these statements for readability of the results.
