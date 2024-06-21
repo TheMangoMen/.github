@@ -25,7 +25,7 @@ Backend: [https://watrank-api-helguind.csclub.cloud](https://watrank-api-helguin
 ## Features Supported
 - View Jobs with Status
 - Bulk Import, Watch and Unwatch Jobs
-- Passwordless Authentication
+- Upsert Contributions
 - Admin Logging
 
 ## Testing SQL Statements
