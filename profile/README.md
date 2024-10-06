@@ -36,5 +36,8 @@ Again, a **crowdsourced job status table**, but this time it's for **ranking sta
   - Each user (linked to their uWaterloo credentials) can only accept **one offer**. Since you can't rank more than one job as your #1 choice, this limits manipulation.  
   - Declining an offer is a different case, as you can receive multiple #1 rankings from employers, but we think this is less impactful because it doesn't significantly affect the ranking process.
 
+# Feedback
+Have feedback? Help us out by filling out this [form](https://forms.gle/Qg7GzWkKnj4jGWmm8)!
+
 # Code
 Coming soon...
